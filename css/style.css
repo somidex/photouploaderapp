@@ -6882,11 +6882,10 @@ body {
   position: absolute;
   text-align: center;
   left: 50%;
-  top: 50%;
+  top: 600px;
   overflow-y: hidden;
   overflow-x: hidden;
   margin-left: -210px;
-  margin-top: -107px;
   padding: 40px 15px 40px;
   opacity: 0;
   z-index: 9;
