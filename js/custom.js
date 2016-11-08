@@ -9,43 +9,31 @@ function get_biggest(elements){
 	return biggest_height;
 }
 
-function resize() {
-	var windowWidth = $(window).width();
-	var windowHeight = $(window).height();
+function IsEmail(email) {
+    var regex = /^([a-zA-Z0-9_.+-])+\@(([a-zA-Z0-9-])+\.)+([a-zA-Z0-9]{2,4})+$/;
+    return regex.test(email);
+}
 
-	// STICKY FOOTER
-	var headerHeight = $('header').outerHeight();
-	var footerHeight = $('footer').outerHeight();
-	var footerTop = (footerHeight) * -1
-	$('footer').css({marginTop: footerTop});
-	$('#main-wrapper').css({paddingBottom: footerHeight});
-
-	// for vertically middle content
-	$('.bp-middle').each(function() {
-		var bpMiddleHeight = $(this).outerHeight() / 2 * - 1;
-		$(this).css({marginTop: bpMiddleHeight});
-	});
-
-	// for equalizer
-	$('.classname').css({minHeight: 0});
-  var ClassName = get_biggest($('.classname'));
-  $('.classname').css({minHeight: ClassName});
+function readURL(input) {
+    if (input.files && input.files[0]) {
+        var reader = new FileReader();
+        
+        reader.onload = function (e) {
+            $('#blah').attr('src', e.target.result);
+        }
+        
+        reader.readAsDataURL(input.files[0]);
+    }
 }
 
 $(window).resize(function() {
-	resize();
+	//resize();
 });
 
 $(document).ready(function() {
 
-	// var $grid = $('.grid').isotope({
- //      columnWidth: '.grid-sizer', 
- //      percentPosition: true,
- //      stagger: 30
- //    });
-
  	var isoOptions = {
-		columnWidth: '.grid-sizer', 
+		columnWidth: '.grid', 
 	    percentPosition: true,
 	    stagger: 30
 	};
@@ -76,6 +64,25 @@ $(document).ready(function() {
 
 	});
 
+	$('.tabs-menu a').click(function(e){
+		e.preventDefault();
+
+		var _href = $(this).attr('href');
+
+		$('.tabs-menu li').removeClass('active');
+		$(this).closest('li').addClass('active');
+
+
+		$('.tabs-item').css({'display' : 'none'});
+		$(_href).css({'display' : 'block'});
+
+		if(_href == '#gallery') {
+			
+			$grid.isotope(isoOptions);
+
+		}
+	});
+
 
 	$('.load-more-btn').click(function(e){
 		e.preventDefault();
@@ -97,7 +104,7 @@ $(document).ready(function() {
             	var elems = $('.ajax-container').children();
             	$grid.append( elems );
 
-            	$grid.isotope( 'prepended', elems );
+            	$grid.isotope( 'appended', elems );
             	$grid.isotope(isoOptions);
             	$('.wavy-loader').hide(300);
             	$('.load-more-btn').css({'display' : 'inline-block'});
@@ -111,13 +118,80 @@ $(document).ready(function() {
             }
         });
 	});
+
+	$("#imgInp").change(function(){
+        readURL(this);
+    });
+
+    // $('.contest-form').submit(function(e){
+    // 	e.preventDefault();
+    //     $('.input-wrap').not('.address-field, .captionfield').addClass('error');
+    //     isvalidate = false;
+
+    //     if( IsEmail($('#account-email').val() )) {
+    //         $('#account-email').closest('.input-wrap').removeClass('error');
+    //         isvalidate = true;
+    //     } else {
+    //         isvalidate = false;
+    //     }
+
+    //     if( !$('#first-name').val() == '') {
+    //         $('#first-name').closest('.input-wrap').removeClass('error');
+    //         isvalidate = true;
+    //     } else {
+    //         isvalidate = false;
+    //     }
+
+    //     if(!$('#imgInp').val() == '') {
+    //     	$('#imgInp').closest('.input-wrap').removeClass('error');
+    //     	isvalidate = true;
+    //     } else {
+    //     	isvalidate = false;
+    //     }
+
+
+    //     if( $('#contact-num').val() != '' && $('#contact-num').val().length == 11 ){
+    //         $('#contact-num').closest('.input-wrap').removeClass('error');
+    //         isvalidate = true;
+    //     } else {
+    //         isvalidate = false;
+    //     }
+
+    //     if( !$('#imgInp').val() == '' && !$('#contact-num').val() == '' && !$('#first-name').val() == '' && IsEmail($('#account-email').val()) &&  isvalidate == true) {
+    //     	console.log('submit');
+    //     	$('.popup-wrap').addClass('active');
+    //     } else {
+    //         e.preventDefault();
+    //     }
+    // });
+
+    $('.close-text').click(function(){
+    	$('.popup-wrap').removeClass('active');
+    	$('#gallery-menu').click();
+    	$('.tabs-menu li:first-child').remove();
+    });
 	
-	resize();
+	//resize();
 });
 
 $(window).load(function() {
-	resize();
+	//resize();
 });
+
+function readURL(input) {
+    if (input.files && input.files[0]) {
+        var reader = new FileReader();
+        
+        reader.onload = function (e) {
+            $('#sw-item').attr('src', e.target.result).css({'display' : 'block'});
+            $('.form-wrapper textarea').focus();
+        }
+        
+        reader.readAsDataURL(input.files[0]);
+    }
+}
+
+
 
 // preloader once done
 // Pace.on('done', function() {
