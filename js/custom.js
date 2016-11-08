@@ -32,56 +32,56 @@ $(window).resize(function() {
 
 $(document).ready(function() {
 
- 	var isoOptions = {
-		columnWidth: '.grid', 
-	    percentPosition: true,
-	    stagger: 30
-	};
+ // 	var isoOptions = {
+	// 	columnWidth: '.grid', 
+	//     percentPosition: true,
+	//     stagger: 30
+	// };
 
-    var $grid = $('.grid').imagesLoaded( function() {
-		// init Isotope after all images have loaded
+ //    var $grid = $('.grid').imagesLoaded( function() {
+	// 	// init Isotope after all images have loaded
 
-		$grid.isotope(isoOptions);
-		$('.gi-wrap').each(function(){
-			$(this).css({'opacity' : '0'});
-		});
+	// 	$grid.isotope(isoOptions);
+	// 	$('.gi-wrap').each(function(){
+	// 		$(this).css({'opacity' : '0'});
+	// 	});
 		
-		$('.animated').appear(function() {
-            var element = $(this);
-            var animation = element.data('animation');
-            var animationDelay = element.data('delay');
-            if(animationDelay) {
-              setTimeout(function(){
-                  element.addClass( animation + " visible" );
-                  element.removeClass('hiding');
-              }, animationDelay);
-            } else {
-              element.addClass( animation + " visible" );
-              element.removeClass('hiding');
-            }               
-        }, {accY: -90});
+	// 	$('.animated').appear(function() {
+ //            var element = $(this);
+ //            var animation = element.data('animation');
+ //            var animationDelay = element.data('delay');
+ //            if(animationDelay) {
+ //              setTimeout(function(){
+ //                  element.addClass( animation + " visible" );
+ //                  element.removeClass('hiding');
+ //              }, animationDelay);
+ //            } else {
+ //              element.addClass( animation + " visible" );
+ //              element.removeClass('hiding');
+ //            }               
+ //        }, {accY: -90});
 
 
-	});
+	// });
 
-	$('.tabs-menu a').click(function(e){
-		e.preventDefault();
+	// $('.tabs-menu a').click(function(e){
+	// 	e.preventDefault();
 
-		var _href = $(this).attr('href');
+	// 	var _href = $(this).attr('href');
 
-		$('.tabs-menu li').removeClass('active');
-		$(this).closest('li').addClass('active');
+	// 	$('.tabs-menu li').removeClass('active');
+	// 	$(this).closest('li').addClass('active');
 
 
-		$('.tabs-item').css({'display' : 'none'});
-		$(_href).css({'display' : 'block'});
+	// 	$('.tabs-item').css({'display' : 'none'});
+	// 	$(_href).css({'display' : 'block'});
 
-		if(_href == '#gallery') {
+	// 	if(_href == '#gallery') {
 			
-			$grid.isotope(isoOptions);
+	// 		$grid.isotope(isoOptions);
 
-		}
-	});
+	// 	}
+	// });
 
 
 	$('.load-more-btn').click(function(e){
