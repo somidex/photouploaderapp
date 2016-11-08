@@ -6111,6 +6111,48 @@ body {
   margin: 20px auto;
   padding: 20px;
   background: rgba(4, 142, 205, 0.8);
+  position: relative;
+}
+
+.form-wrapper:before {
+  content: '';
+  display: block;
+  float: none;
+  clear: both;
+  width: 100%;
+  height: 100%;
+  left: 0;
+  top: 0;
+  background: rgba(255, 255, 255, 0.7);
+  position: absolute;
+  z-index: 99;
+  visibility: hidden;
+  opacity: 0;
+  -webkit-transition: all 0.2s ease;
+  -moz-transition: all 0.2s ease;
+  -ms-transition: all 0.2s ease;
+  -o-transition: all 0.2s ease;
+  transition: all 0.2s ease;
+  -webkit-transform: scale(0);
+  -moz-transform: scale(0);
+  -ms-transform: scale(0);
+  -o-transform: scale(0);
+  transform: scale(0);
+}
+
+.form-wrapper.preload-overlay .wavy-loader {
+  opacity: 1;
+  visibility: visible;
+}
+
+.form-wrapper.preload-overlay:before {
+  opacity: 1;
+  visibility: visible;
+  -webkit-transform: scale(1);
+  -moz-transform: scale(1);
+  -ms-transform: scale(1);
+  -o-transform: scale(1);
+  transform: scale(1);
 }
 
 .form-wrapper h3 {
@@ -6672,6 +6714,17 @@ body {
 
 .tabs-item {
   display: none;
+}
+
+.form-wrapper .wavy-loader {
+  position: absolute;
+  background: transparent;
+  z-index: 999;
+  display: block;
+  visibility: hidden;
+  opacity: 0;
+  top: 50%;
+  margin-top: -15px;
 }
 
 .form-wrapper h2 {
