@@ -6038,6 +6038,7 @@ body {
 
 .tabs-menu ul li.active a {
   background: linear-gradient(to bottom, #f34b27 0%, #f34b27 0%, #f34b27 0%, #f34b27 0%, #f34b27 100%);
+  pointer-events: none !important;
 }
 
 .tabs-menu ul a {
