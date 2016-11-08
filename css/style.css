@@ -6055,7 +6055,7 @@ body {
   background: -ms-linear-gradient(top, #f85032 0%, #f02f17 0%, #f6290c 0%, #f16f5c 0%, #f34c27 100%);
   background: linear-gradient(to bottom, #f85032 0%, #f02f17 0%, #f6290c 0%, #f16f5c 0%, #f34c27 100%);
   filter: progid:DXImageTransform.Microsoft.gradient( startColorstr='#f85032', endColorstr='#f34c27', GradientType=0 );
-  box-shadow: 0 2px 2px 0 rgba(0, 0, 0, 0.14), 0 1px 5px 0 rgba(0, 0, 0, 0.12), 0 3px 1px -2px rgba(0, 0, 0, 0.2);
+  box-shadow: 0 3px 3px 0 rgba(0, 0, 0, 0.16), 0 3px 6px 0 rgba(0, 0, 0, 0.16), 0 3px 4px -2px rgba(0, 0, 0, 0.3);
 }
 
 .tabs-menu ul a:hover {
@@ -6382,11 +6382,11 @@ body {
   background: #f34b27;
   display: inline-block;
   color: #ffffff;
-  box-shadow: 0 2px 2px 0 transparent, 0 1px 5px 0 transparent, 0 3px 1px -2px transparent;
+  box-shadow: 0 3px 3px 0 rgba(0, 0, 0, 0.16), 0 3px 6px 0 rgba(0, 0, 0, 0.16), 0 3px 4px -2px rgba(0, 0, 0, 0.3);
 }
 
 .load-more-btn:hover, .btn:hover {
-  box-shadow: 0 2px 2px 0 rgba(0, 0, 0, 0.14), 0 1px 5px 0 rgba(0, 0, 0, 0.12), 0 3px 1px -2px rgba(0, 0, 0, 0.2);
+  box-shadow: 0 2px 2px 0 transparent, 0 1px 5px 0 transparent, 0 3px 1px -2px transparent;
 }
 
 .wavy-loader {
@@ -6882,10 +6882,11 @@ body {
   position: absolute;
   text-align: center;
   left: 50%;
-  top: 30px;
+  top: 50%;
   overflow-y: hidden;
   overflow-x: hidden;
   margin-left: -210px;
+  margin-top: -107px;
   padding: 40px 15px 40px;
   opacity: 0;
   z-index: 9;
