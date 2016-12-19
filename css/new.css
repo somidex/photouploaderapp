@@ -6114,6 +6114,60 @@ body {
   color: #ffffff;
 }
 
+
+.how-to-join {
+  padding: 10px 15px 0;
+}
+
+.how-to-join ul {
+  padding-left: 15px;
+  margin-top: 7px;
+}
+
+.how-to-join ul li {
+  padding-bottom: 2px;
+  list-style-type: decimal;
+  font-size: 13px;
+}
+
+.how-to-join .join-notes {
+  font-size: 12px;
+  line-height: 14px;
+  margin-top: 10px;
+}
+
+.how-to-join p {
+  font-size: 14px;
+  line-height: 16px;
+}
+
+.how-to-join p i {
+  font-style: italic;
+}
+
+.how-to-join h5 {
+  font-size: 22px;
+}
+
+.how-to-join .divider:after {
+  content: '';
+  display: block;
+  float: none;
+  clear: both;
+}
+
+.how-to-join .fl-left {
+  width: 65%;
+  padding: 0px 15px;
+  float: left;
+}
+
+.how-to-join .fl-right {
+  width: 35%;
+  padding: 0px 15px;
+  float: right;
+}
+
 .form-wrapper {
   margin: 20px auto;
   padding: 20px;
